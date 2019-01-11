@@ -1,2 +1,30 @@
 /* This file is for setting global styles  */
 @import 'variables';
+
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-size: 12px;
+  user-select: none;
+  color: #111;
+}
+
+@media all and (min-width: 376px) {
+  html { font-size: 14px; }
+}
+
+@media all and (min-width: 415px) {
+  html { font-size: 18px; }
+}
+
+@media all and (min-width: 769px) {
+  html { font-size: 24px; }
+}
+
+.full-page {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}

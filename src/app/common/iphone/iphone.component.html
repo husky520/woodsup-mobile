@@ -1,0 +1,21 @@
+<div class="iphone-frame" [ngStyle]="{'transform': 'scale(' + iphoneScale +')'}">
+  <img src="assets/img/iphone.png" class="bg-iphone">
+  <div class="screen">
+    <div class="title">BOSS直聘 / 拉勾网<br>智联招聘</div>
+
+    <ul class="item-list">
+      <li class="item" *ngFor="let job of showData; let i = index">
+        <a *ngIf="job.url" class="links" [href]="job.url"></a>
+        <div class="left-side">
+          <p class="text">{{ job.jobName }}</p>
+          <p class="text">{{ job.city }} {{ job.area }} {{ job.address }}</p>
+        </div>
+        <div class="line"></div>
+        <div class="right-side">
+          <p class="text">塔木科技<br>互联网</p>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>

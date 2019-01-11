@@ -1,0 +1,124 @@
+@import '../../variables';
+
+.about-page {
+  padding-top: $navbar-height;
+
+  .chapter {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  // 使命
+  .mission {
+    padding: 0 1rem;
+    margin-bottom: 5rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  // team
+  .team {
+    margin-bottom: 5rem;
+
+    .team-list {
+      width: 100%;
+
+      .team-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem 4.5rem;
+
+        .image {
+          height: 80px;
+          padding: 0 1rem;
+          img {
+            width: 100%;
+          }
+        }
+
+        .intro {
+          flex: 1;
+          text-align: center;
+          font-size: 0.85rem;
+          color: #222;
+        }
+
+        &.reverse {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  // 招聘
+  .join-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('/assets/img/offer/bg.png') no-repeat center bottom;
+    background-size: 100% auto;
+
+    .jobs-list {
+      position: relative;
+      height: 60%;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 2rem 0;
+
+      .qrcode {
+        display: flex;
+        align-items: flex-start;
+        padding-left: 2rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        .image {
+          margin: 0 0.5rem;
+          width: 4.2rem;
+          img { width: 100%; }
+          .name {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+
+      .address {
+        padding: 0.2rem 1rem 0.2rem 0;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+        color: #fff;
+        a {
+          color: #fff;
+          font-size: 0.8rem;
+          text-decoration: none;
+        }
+      }
+    } // .info end
+
+    .copyright {
+      padding: 0.5em 0;
+      color: #fff;
+      text-align: center;
+      font-size: 0.5rem;
+    }
+  }
+}

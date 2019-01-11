@@ -1,7 +1,16 @@
-#my-page-card {
-  min-height: 100%;
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
-ul, li{
-  display: inline;
+.page-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: 100%;
 }

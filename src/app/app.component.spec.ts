@@ -10,7 +10,7 @@ import {
 } from '../modules/transfer-state/browser-transfer-state.module';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './features/dashboard.component';
+import { DashboardComponent } from './pages/dashboard.component';
 import { NotFound404Component } from './not-found404.component';
 import { routes } from './app.routing';
 

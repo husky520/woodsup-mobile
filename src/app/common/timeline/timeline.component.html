@@ -1,0 +1,30 @@
+<div class="timeline">
+
+  <!-- 中间线 -->
+  <div class="center-line"></div>
+
+  <!-- 左子树 -->
+  <div class="left-side">
+    <div *ngFor="let item of leftItems" class="row">
+      <i class="dot"></i>
+      <div class="cell">
+        <img class="image" [src]="item.imgUrl" alt="icon">
+        <div class="text">{{ item.text }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右子树 -->
+  <div class="right-side">
+    <div *ngFor="let item of rightItems" class="row">
+      <i class="dot"></i>
+      <div class="cell">
+        <img class="image" [src]="item.imgUrl" alt="icon">
+        <div class="text">{{ item.text }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 泡泡 -->
+  <div class="pop"></div>
+</div>

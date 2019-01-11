@@ -1,0 +1,24 @@
+<div class="navbar-container">
+
+  <div class="nav">
+    <div class="nav-btn" [ngClass]="{'active': !isClose}" (click)="toggleNav()">
+      <div class="split-line"></div>
+      <div class="split-line"></div>
+      <div class="split-line"></div>
+    </div>
+    <div class="logo">
+      <picture>
+        <source media="(max-width: 414px)" srcset="assets/img/logo@2x.png">
+        <source media="(max-width: 768px)" srcset="assets/img/logo@2x.png">
+        <img srcset="assets/img/logo@3x.png" alt="LOGO">
+      </picture>
+    </div>
+  </div>
+
+  <ul class="nav-list" [ngClass]="{'close': isClose}" (click)="toggleNav(100)">
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/">首页</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/product">产品介绍</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/team">核心团队</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/join-us">加入我们</a></li>
+  </ul>
+</div>

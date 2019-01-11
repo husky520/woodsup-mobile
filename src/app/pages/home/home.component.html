@@ -1,0 +1,41 @@
+<div class="home-page">
+  <!-- 首页动画 -->
+  <div class="full-page animation">
+    <canvas></canvas>
+  </div>
+  <!-- 首页动画 end -->
+
+  <!-- 一分钟了解我们 -->
+  <div class="full-page learn-about-us">
+    
+    <div class="container video">
+      <div class="bg-blue"></div>
+      <h2 class="chapter">一分钟了解我们</h2>
+      <div class="video-wrapper">
+        <div *ngIf="showPoster" class="video-poster"></div>
+        <div *ngIf="!isPlay" class="video-mask" (click)="toggleVideo()"></div>
+        <video #video preload="auto" (click)="toggleVideo()" src="http://wecareroom.com/upload/tamuVedio/tamu.mp4">你的浏览器不支持 HTML 5</video>
+      </div>
+    </div>
+
+    <div class="container text">
+      <h3>为门店销售量身打造</h3>
+      <p>在云深间造，带您的客户随时置身于不同空间场景。</p>
+      <p>通过令人惊叹的实景图像，直觉操作，</p>
+      <p>在最熟悉带日常中，挑选最合适的产品。</p>
+      <p>智能时代带品牌升级，您可以轻松拥有！</p>
+    </div>
+  </div>
+  <!-- 一分钟了解我们 end -->
+
+  <!-- 合作伙伴 -->
+  <div class="full-page partner"></div>
+  <!-- 合作伙伴 end -->
+
+  <!-- 立即体验 -->
+  <div class="trial">
+    <div class="trial-arrow-up"></div>
+    <a routerLink="/trial" class="trial-btn">立即体验</a>
+  </div>
+  <!-- 立即体验 end -->
+</div>

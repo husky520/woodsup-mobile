@@ -1,0 +1,98 @@
+@import '../../variables';
+
+.product-page {
+  padding-top: $navbar-height;
+}
+
+// Gif 图
+.gif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .text-wrapper {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .gif-wrapper {
+    position: relative;
+    margin: 0 5vw;
+    padding: 0 8vw;
+  
+    .bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 7.5rem;
+      height: 12rem;
+      z-index: -1;
+      border-radius: 0.6rem;
+      background: $light-blue;
+    }
+  
+    .row {
+      display: flex;
+      align-items: center;
+  
+      .image {
+        width: 70vw;
+        height: 33vw;
+        padding: 0.6rem 0;
+        background: $light-blue;
+        border-radius: 0.2rem;
+  
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+  
+      .text {
+        text-align: center;
+        font-size: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+  
+      &.reverse {
+        flex-direction: row-reverse;
+      }
+  
+      &.mt {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// Timeline
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 6rem 0;
+
+  .chapter {
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .timeline {
+    width: 85vw;
+  }
+}

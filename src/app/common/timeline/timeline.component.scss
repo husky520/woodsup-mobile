@@ -1,0 +1,133 @@
+@import '../../variables';
+
+$row-height: 4rem;
+$row-margin: 7rem;
+
+@mixin cls-float {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+// 时间轴
+.timeline {
+  @include cls-float();
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  
+  .center-line {
+    position: absolute;
+    top: $row-height / 2;
+    bottom: $row-height / 2;
+    left: 50%;
+    margin-left: -1px;
+    border-left: 2px solid $gray;
+  }
+
+  .row {
+    position: relative;
+    height: $row-height;
+    margin-top: $row-margin;
+
+    &:hover {
+      .dot {
+        transition: all 500ms;
+        border: 1px solid $deep-blue;
+        background: radial-gradient($light-blue, $normal-blue);
+      }
+      .cell {
+        transition: all 500ms;
+        border: 2px solid $deep-blue;
+      }
+    }
+
+    .dot {
+      display: block;
+      position: absolute;
+      top: 50%;
+      margin-top: -0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 1px solid $gray;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    .cell {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: $row-height;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+
+      .image {
+        flex: 0 0 $row-height;
+        width: $row-height;
+        padding: 0.5rem;
+        box-sizing: border-box;
+      }
+
+      .text {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .left-side, .right-side {
+    width: 50%;
+  }
+
+  // 左边
+  .left-side {
+    float: left;
+
+    .dot {
+      right: -0.5rem;
+    }
+
+    .cell {
+      flex-direction: row-reverse;
+      right: 0.5rem;
+      text-align: right;
+    }
+  }
+
+  // 右边
+  .right-side {
+    float: right;
+
+    .row:first-child {
+      margin: 0;
+    }
+
+    .dot {
+      left: -0.5rem;
+    }
+
+    .cell {
+      flex-direction: row;
+      left: 0.5rem;
+      text-align: left;
+    }
+  }
+
+  .pop {
+    $pop-size: 1.2rem;
+
+    position: absolute;
+    left: 50%;
+    bottom: -3rem;
+    margin-left: -$pop-size / 2;
+    width: $pop-size;
+    height: $pop-size;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
