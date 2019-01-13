@@ -11,7 +11,9 @@ html {
 }
 
 @media all and (min-width: 376px) {
-  html { font-size: 14px; }
+  .m-container {
+    width: 100%;
+  }
 }
 
 @media all and (min-width: 415px) {
@@ -27,4 +29,29 @@ html {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.m-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (min-width: 376px) {
+  .m-container {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 415px) {
+  .m-container {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .m-container {
+    // width: 769px;
+  }
 }

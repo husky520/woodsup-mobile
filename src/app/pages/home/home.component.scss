@@ -32,6 +32,7 @@
         bottom: 26vh;
         margin: 0;
         font-size: 1.5rem;
+        font-weight: bold;
         text-align: center;
       }
 
@@ -92,13 +93,44 @@
 }
 
 .partner {
-  background: #cca;
+  text-align: center;
+  padding: 0 1rem 5rem 1rem;
+
+  .chapter {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .text {
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
+
+  .partner-list {
+    padding: 3rem 15vw 13rem 15vw;
+    background: url('/assets/img/partner/bg.png') no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .picture {
+    display: block;
+    width: 100%;
+    text-align: left;
+    &.reverse {
+      text-align: right;
+    }
+
+    img {
+      width: 40vw;
+    }
+  }
 }
 
 .trial {
   position: fixed;
   width: 100%;
   bottom: 0.2rem;
+  z-index: 999;
 
   .trial-arrow-up {
     width: 3rem;
@@ -113,12 +145,12 @@
   .trial-btn {
     display: block;
     width: 8rem;
-    padding: 0.3rem 0;
+    padding: 0.5rem 0;
     margin: 0.5rem auto;
 
     border: 1px solid #ddd;
     border-radius: 4px;
-
+    box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
     background: #fff;
 
     color: $blue-black;

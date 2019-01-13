@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { PartnerData } from '../../interface/partner.interface';
+import { partnerData } from '../../mock/partner.data';
 
 @Component({
   selector: 'home-page',
@@ -6,6 +8,9 @@ import { AfterViewInit, Component, OnInit, ElementRef, ViewChild } from '@angula
   styleUrls: ['home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+
+  public images: PartnerData[];
+  public showArrow: boolean;
 
   @ViewChild('video') private video: ElementRef;
 
@@ -15,12 +20,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.showPoster = true;
     this.isPlay = false;
+    this.images = partnerData;
+    this.showArrow = true;
   }
 
   ngAfterViewInit(): void {
     this.video.nativeElement.addEventListener('ended', () => {
       this.showPoster = true;
       this.isPlay = false;
+    });
+
+    window.addEventListener('scroll', () => {
+      this.showArrow = window.scrollY < 100;
+    });
+
+    this.openingAnimate({
+      el: '#animate',
     });
   }
 

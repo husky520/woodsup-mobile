@@ -21,14 +21,21 @@ export class IphoneComponent implements OnInit {
     // iPhoneX: 2.1653
     // iPhoneXs Max: 2.1643
     const screenRate = window.innerHeight / window.innerWidth;
-
     let iphoneScale;
-    if (iphoneScale < 1) {
+    if (screenRate <= 1.2) {
+      iphoneScale = 0.6 * screenRate;
+    } else if (screenRate <= 1.5) {
+      iphoneScale = 0.65;
+    } else if (screenRate <= 1.7) {
       iphoneScale = 0.7;
-    } else if (screenRate < 2) {
+    } else if (screenRate <= 1.8) {
       iphoneScale = 0.8;
-    } else {
+    } else if (screenRate <= 2) {
+      iphoneScale = 0.85;
+    } else if (screenRate <= 2.1) {
       iphoneScale = 0.9;
+    } else {
+      iphoneScale = 1;
     }
     // iPhone5s(SE)
     if (window.innerWidth <= 320) {
@@ -39,13 +46,13 @@ export class IphoneComponent implements OnInit {
 
   ngOnInit(): void {
     // 只显示五条
-    this.showData = this.data.splice(0, 5);
+    this.showData = this.data.slice(0, 5);
 
     // 屏幕适配
     this.iphoneScale = this.scale || IphoneComponent.fitScreen();
 
     window.addEventListener('resize', () => {
-      console.log(IphoneComponent.fitScreen());
+      this.iphoneScale = this.scale || IphoneComponent.fitScreen();
     });
   }
 }

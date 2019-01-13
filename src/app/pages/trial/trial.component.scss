@@ -1,0 +1,128 @@
+$blue: #3eb9f9;
+$input-height: 2.8rem;
+$btn-height: 2.8rem;
+
+.trial-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    text-align: center;
+    img {
+      width: 12rem;
+    }
+  }
+
+  .login-form {
+    width: 65vw;
+    padding: 3rem 0;
+    text-align: center;
+
+    .label {
+      display: block;
+      position: relative;
+
+      input {
+        display: block;
+        width: 100%;
+        border-radius: $input-height / 2;
+        border: 1px solid #666;
+        margin: 1rem 0;
+        padding-left: $input-height + 1rem;
+        height: $input-height;
+        box-sizing: border-box;
+        font-size: 0.85rem;
+        outline: none;
+        transition: all 500ms;
+
+        &:focus {
+          border: 1px solid $blue;
+        }
+
+        &.password-input {
+          padding-right: 6.5rem;
+        }
+      }
+
+      .validator {
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        $height: $input-height - 0.4rem;
+        background: $blue;
+        width: 7rem;
+        height: $height;
+        border-radius: $height / 2;
+        border: none;
+        font-size: 0.8rem;
+        color: #fff;
+        outline: none;
+        &:active {
+          background: #188bc9;
+        }
+      }
+      
+      .icon {
+        display: block;
+        position: absolute;
+        left: $input-height / 4;
+        top: 0;
+        box-sizing: border-box;
+        width: $input-height;
+        height: $input-height;
+        transition: all 500ms;
+      }
+
+      .icon-account {
+        background: url('/assets/img/login/account.png') no-repeat center;
+        background-size: 50%;
+      }
+      .icon-password {
+        background: url('/assets/img/login/password.png') no-repeat center;
+        background-size: 50%;
+      }
+
+      .account-input:focus ~ .icon-account {
+        background: url('/assets/img/login/account_active.png') no-repeat center;
+        background-size: 50%;
+      }
+      .password-input:focus ~ .icon-password {
+        background: url('/assets/img/login/password_active.png') no-repeat center;
+        background-size: 50%;
+      }
+    }
+
+    .btn {
+      margin-top: 7rem;
+      button {
+        display: block;
+        width: 100%;
+        height: $btn-height;
+        line-height: $btn-height;
+        border-radius: $btn-height / 2;
+        text-align: center;
+        background: $blue;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        outline: none;
+
+        &:active {
+          background: #188bc9;
+        }
+      }
+    }
+
+    button.loading {
+      background: #86cbf0!important;
+    }
+
+    .error {
+      font-size: 0.8rem;
+      text-align: center;
+      color: #dc3545;
+    }
+  }
+}

@@ -13,10 +13,21 @@
   <!-- team -->
   <div class="team">
     <h2 class="chapter">我们的团队</h2>
-    <div class="team-list">
-      <div *ngFor="let person of team; let i = index" class="team-item" [ngClass]="{'reverse': i % 2 === 1}">
-        <div class="image"><img [src]="person.imgUrl" alt="imgUrl"></div>
-        <div class="intro">{{ person.name }}<br>{{ person.position }}</div>
+    <div class="team-wrapper">
+      <div [ngClass]="{'hide': tabIndex === 2}" class="team-list team-list-1">
+        <div *ngFor="let person of team1; let i = index" class="team-item" [ngClass]="{'reverse': i % 2 === 1}">
+          <div class="image"><img [src]="person.imgUrl" alt="imgUrl"></div>
+          <div class="intro">{{ person.name }}<br>{{ person.position }}</div>
+        </div>
+      </div>
+      <div [ngClass]="{'hide': tabIndex === 1}" class="team-list team-list-2">
+        <div *ngFor="let person of team2; let i = index" class="team-item" [ngClass]="{'reverse': i % 2 === 1}">
+          <div class="image"><img [src]="person.imgUrl" alt="imgUrl"></div>
+          <div class="intro">{{ person.name }}<br>{{ person.position }}</div>
+        </div>
+      </div>
+      <div class="more" (click)="switchTab()"><a href="javascript:void(0);">
+        更多成员介绍 <span class="icon-more">❯❯❯</span></a>
       </div>
     </div>
   </div>
@@ -33,11 +44,11 @@
     <div class="info">
       <div class="qrcode">
         <div class="image">
-          <img src="assets/img/offer/qrcode_helper.png" alt="helper">
+          <img src="assets/img/qrcode_helper.png" alt="helper">
           <div class="name">云深小助手</div>
         </div>
         <div class="image">
-          <img src="assets/img/offer/qrcode_gzh.png" alt="gzh">
+          <img src="assets/img/qrcode_gzh.png" alt="gzh">
           <div class="name">云深公众号</div>
         </div>
       </div>

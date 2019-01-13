@@ -1,6 +1,6 @@
-<div class="join-page">
+<div class="join-page m-container">
   <!-- 行业介绍 -->
-  <div class="full-page info">
+  <div class="info">
     <h2 class="chapter">
       建材家居行业时世界上 <br>
       数字化/互联网化最低对行业之一
@@ -44,7 +44,7 @@
     <h2 class="chapter">我们的文化</h2>
     <p>在云深间造，我们努力工作，彼此尊重，追求极致。</p>
     <p>我们的团队由世界名校，知名机构的多样性人才组成，来自微软，</p>
-    <p>中兴。等百强企业平均智商128的工程师及来自德勒、</p>
+    <p>中兴。等百强企业平均智商118的工程师及来自德勒、</p>
     <p>百胜中国、凯捷咨询的资深运营管理层。</p>
   </div>
   <!-- 文化 end -->
@@ -54,33 +54,33 @@
     <h2 class="chapter">我们的品格</h2>
     <table vertical="center">
       <tr>
-        <td>追求极致</td>
+        <td><div class="fill">追求极致</div></td>
         <td><i class="dash dash-h"></i></td>
-        <td>勇敢无畏</td>
+        <td><div class="fill">勇敢无畏</div></td>
       </tr>
       <tr>
         <td></td>
         <td colspan="2"><i class="dash dash-x"></i></td>
       </tr>
       <tr>
-        <td colspan="3">辩证理性</td>
+        <td colspan="3"><div class="fill">辩证理性</div></td>
       </tr>
       <tr>
         <td colspan="2"><i class="dash dash-x"></i></td>
         <td></td>
       </tr>
       <tr>
-        <td>敏捷执行</td>
+        <td><div class="fill">敏捷执行</div></td>
         <td><i class="dash dash-h"></i></td>
-        <td>突破自我</td>
+        <td><div class="fill">突破自我</div></td>
       </tr>
       <tr>
         <td></td>
         <td colspan="2"><i class="dash dash-x"></i></td>
       </tr>
       <tr>
-        <td colspan="3">
-          我们期待新鲜血液<br>我们期待独特思维
+        <td class="fill" colspan="3">
+          <div class="fill">我们期待新鲜血液<br>我们期待独特思维</div>
         </td>
       </tr>
     </table>
@@ -113,28 +113,20 @@
 
   <!-- 招聘 -->
   <div class="full-page join-us">
-    <h2 class="chapter">我们期待你的加入</h2>
-    <div class="jobs">
-      <div class="title">BOSS直聘 / 拉勾网<br>智联招聘</div>
-      <div *ngFor="let job of jobs; let i = index" class="job-item" [ngStyle]="{'top': (-i * 13) + '%'}">
-        <div class="left-side">
-          <p>{{ job.jobName }}</p>
-          <p>{{ job.city }} {{ job.area }} {{ job.address }}</p>
-        </div>
-        <div class="line"></div>
-        <p class="right-side">
-          塔木科技<br>互联网
-        </p>
-      </div>
+    <h2 class="chapter">与飞速发展的行业革新者一起成长</h2>
+
+    <div class="jobs-list">
+      <my-iphone [data]="jobsData"></my-iphone>
     </div>
+
     <div class="info">
       <div class="qrcode">
         <div class="image">
-          <img src="assets/img/offer/qrcode_helper.png" alt="helper">
+          <img src="assets/img/qrcode_helper.png" alt="helper">
           <div class="name">云深小助手</div>
         </div>
         <div class="image">
-          <img src="assets/img/offer/qrcode_gzh.png" alt="gzh">
+          <img src="assets/img/qrcode_gzh.png" alt="gzh">
           <div class="name">云深公众号</div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const valuesData: TimelineData[] = [
     style: 'right',
   }, {
     imgUrl: 'assets/img/tree/68.png',
-    text: '增加客户留店时常',
+    text: '增加客户留店时长',
     style: 'left',
   }, {
     imgUrl: 'assets/img/tree/63.png',

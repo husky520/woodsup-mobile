@@ -9,10 +9,10 @@ import { jobsData } from '../../mock/jobs.data';
 })
 export class JoinUsComponent implements OnInit, AfterViewInit {
 
-  public jobs: JobData[];
+  public jobsData: JobData[];
 
   ngOnInit(): void {
-    this.jobs = jobsData;
+    this.jobsData = jobsData;
   }
 
   ngAfterViewInit(): void {
