@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JobData } from '../../interface/Job.interface';
+import { JobData } from '../../interface/job.interface';
 
 @Component({
   selector: 'my-iphone',

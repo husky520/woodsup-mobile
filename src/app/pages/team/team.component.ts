@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { TeamData } from '../../interface/team.interface';
-import { JobData } from '../../interface/Job.interface';
+import { JobData } from '../../interface/job.interface';
 import { teamData1, teamData2 } from '../../mock/team.data';
 import { jobsData } from '../../mock/jobs.data';
 

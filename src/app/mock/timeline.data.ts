@@ -1,4 +1,4 @@
-import { TimelineData } from  '../interface/Timeline.interface';
+import { TimelineData } from  '../interface/timeline.interface';
 
 // 价值观
 export const valuesData: TimelineData[] = [
