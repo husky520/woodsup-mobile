@@ -11,14 +11,14 @@
 
   // 按钮
   .nav-btn {
-    float: left;
+    float: right;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 3rem;
+    width: 5.5rem;
     height: 100%;
-    margin: 0 0.5rem;
-    padding: 0.6rem 0.5rem;
+    // margin: 0 0.5rem;
+    padding: 0.8rem 1.6rem 0.5rem 1.6rem;
     box-sizing: border-box;
     cursor: pointer;
     
@@ -35,25 +35,26 @@
 
   // LOGO
   .logo {
-    float: right;
+    float: left;
     display: flex;
     align-items: flex-end;
     height: 100%;
     margin: 0 1rem;
 
     img {
-      height: 2rem;
+      height: 2.5rem;
     }
   }
 
   // 菜单
   .nav-list {
+    float: right;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 
-    width: 8rem;
-    height: 12rem;
+    width: 8.5rem;
+    // height: 12rem;
     margin: 0;
     padding: 0.5rem 0 1rem 0;
     border: 1px solid #f6f6f6;
@@ -74,8 +75,8 @@
 
     .nav-item {
       width: 100%;
-      height: 3rem;
-      line-height: 3rem;
+      height: 3.5rem;
+      line-height: 3.5rem;
 
       a {
         display: block;

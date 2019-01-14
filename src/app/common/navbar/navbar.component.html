@@ -1,17 +1,19 @@
 <div class="navbar-container">
 
   <div class="nav">
-    <div class="nav-btn" [ngClass]="{'active': !isClose}" (click)="toggleNav()">
+    <div class="nav-btn" #navBtn [ngClass]="{'active': !isClose}" (click)="toggleNav()">
       <div class="split-line"></div>
       <div class="split-line"></div>
       <div class="split-line"></div>
     </div>
     <div class="logo">
-      <picture>
-        <source media="(max-width: 414px)" srcset="assets/img/logo@2x.png">
-        <source media="(max-width: 768px)" srcset="assets/img/logo@2x.png">
-        <img srcset="assets/img/logo@3x.png" alt="LOGO">
-      </picture>
+      <a routerLink="/">
+        <picture>
+          <source media="(max-width: 414px)" srcset="assets/img/logo@2x.png">
+          <source media="(max-width: 768px)" srcset="assets/img/logo@3x.png">
+          <img srcset="assets/img/logo@3x.png" alt="LOGO">
+        </picture>
+      </a>
     </div>
   </div>
 

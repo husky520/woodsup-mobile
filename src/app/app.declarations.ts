@@ -8,6 +8,8 @@ import { TrialComponent } from './pages/trial/trial.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { TimelineComponent } from './common/timeline/timeline.component';
 import { IphoneComponent } from './common/iphone/iphone.component';
+import { AnimationBgComponent } from './common/animation-bg/animation-bg.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 export const APP_DECLARATIONS = [
   // pages
@@ -22,4 +24,6 @@ export const APP_DECLARATIONS = [
   NavbarComponent,
   TimelineComponent,
   IphoneComponent,
+  AnimationBgComponent,
+  FooterComponent,
 ];

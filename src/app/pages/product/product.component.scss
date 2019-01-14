@@ -1,7 +1,7 @@
 @import '../../variables';
 
 .product-page {
-  padding-top: $navbar-height;
+  padding-top: $navbar-height + 3rem;
 }
 
 // Gif 图
@@ -12,31 +12,24 @@
 
   .text-wrapper {
     text-align: center;
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-  
-    h2 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-  
-    p {
-      font-size: 1rem;
+    margin-bottom: 3rem;
+
+    .chapter {
+      margin-bottom: 2rem;
     }
   }
   
   .gif-wrapper {
     position: relative;
-    margin: 0 5vw;
-    padding: 0 8vw;
+    margin: 0 5%;
+    padding: 0 6%;
   
     .bg {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 7.5rem;
-      height: 12rem;
+      bottom: 25vw;
+      height: 40vw;
       z-index: -1;
       border-radius: 0.6rem;
       background: $light-blue;
@@ -62,6 +55,7 @@
       .text {
         text-align: center;
         font-size: 1rem;
+        line-height: 1.5rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
       }
@@ -86,21 +80,17 @@
   margin: 6rem 0;
 
   .chapter {
-    margin-bottom: 3rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .timeline {
-    width: 85vw;
+    width: 90vw;
   }
 }
 
 .trial {
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: center;
 
   .top, .bottom {
@@ -140,17 +130,12 @@
     padding: 1rem 0;
     .chapter {
       margin: 1.5rem 0;
-      font-size: 1.2rem;
       line-height: 1.5;
-      font-weight: bold;
       color: $deep-blue;
-      text-align: center;
     }
 
     .text {
-      font-size: 0.8rem;
       color: $normal-blue;
-      text-align: center;
     }
 
     .qrcode {

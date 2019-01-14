@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -7,14 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   public isClose: boolean;
+  @ViewChild('navBtn') navBtn: ElementRef;
 
   ngOnInit(): void {
     this.isClose = true;
+
+    document.addEventListener('click', (e) => {
+      if (!this.navBtn.nativeElement.contains(e.target)) {
+        this.toggleNav(true);
+      }
+    });
   }
 
-  toggleNav(delay: number = 0) {
+  toggleNav(status: boolean = null, delay: number = 0) {
     setTimeout(() => {
-      this.isClose = !this.isClose;
+      if (status === null) {
+        this.isClose = !this.isClose;
+      } else {
+        this.isClose = status;
+      }
     }, delay);
   }
 }
