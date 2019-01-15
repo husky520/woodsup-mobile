@@ -1,11 +1,10 @@
 import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
-import { style } from '@angular/animations';
 
 @Component({
   selector: 'animation-bg',
-  template: `<canvas #animation [width]="width" [height]="height"
-    [ngStyle]="{'width': '400%', 'margin-left': '-80%'}"></canvas>`,
-    // [ngStyle]="{'transform': 'scale(' + scaler + ')'}"></canvas>`,
+  template: `<canvas class="animation-canvas" #animation [width]="width" [height]="height">
+    </canvas>`,
+  styleUrls: ['animation-bg.component.scss'],
 })
 export class AnimationBgComponent implements AfterViewInit {
   @Input() public width: number;
@@ -15,8 +14,8 @@ export class AnimationBgComponent implements AfterViewInit {
   public originX: string = '0%';
   public originY: string = '0%';
   public styleObj;
-  private __timer: number = null;
-  private __frame: number = 0;
+  private timer: number = null;
+  private frame: number = 0;
 
   ngAfterViewInit(): void {
     this.openingAnimate({
@@ -57,20 +56,20 @@ export class AnimationBgComponent implements AfterViewInit {
     render.bind(this)();
     function render() {
       window['__isAnimating'] = true;
-      this.__timer = null;
-      this.__timer = window.requestAnimationFrame.bind(this)(() => {
-        if (this.__frame > speed * 60) {
+      this.timer = null;
+      this.timer = window.requestAnimationFrame.bind(this)(() => {
+        if (this.frame > speed * 60) {
           // 关闭动画
-          window.cancelAnimationFrame(this.__timer);
+          window.cancelAnimationFrame(this.timer);
           window['__isAnimating'] = false;
-          this.__frame = 0;
-          this.__timer = null;
+          this.frame = 0;
+          this.timer = null;
           this.openingAnimationStatus = false;
         } else {
           lightAnimate.bind(this)(lightPoints);
           buildingAnimate.bind(this)(buildingPoints);
           render.bind(this)();
-          this.__frame++;
+          this.frame++;
         }
       });
     }
@@ -104,8 +103,8 @@ export class AnimationBgComponent implements AfterViewInit {
     // 绘直线工具
     function lineAnimation(startX, startY, x, y) {
       const currentStep = [
-        startX + this.__frame * getAnimateStep(startX, x),
-        startY + this.__frame * getAnimateStep(startY, y),
+        startX + this.frame * getAnimateStep(startX, x),
+        startY + this.frame * getAnimateStep(startY, y),
       ];
       ctx.beginPath();
       ctx.moveTo(startX, startY);
@@ -116,16 +115,16 @@ export class AnimationBgComponent implements AfterViewInit {
     // 绘曲线工具
     function curveAnimation(startX, startY, ctrlX, ctrlY, x, y) {
       const Q1 = [
-        startX + getAnimateStep(startX, ctrlX) * this.__frame,
-        startY + getAnimateStep(startY, ctrlY) * this.__frame,
+        startX + getAnimateStep(startX, ctrlX) * this.frame,
+        startY + getAnimateStep(startY, ctrlY) * this.frame,
       ];
       const Q2 = [
-        ctrlX + getAnimateStep(ctrlX, x) * this.__frame,
-        ctrlY + getAnimateStep(ctrlY, y) * this.__frame,
+        ctrlX + getAnimateStep(ctrlX, x) * this.frame,
+        ctrlY + getAnimateStep(ctrlY, y) * this.frame,
       ];
       const endPointAxis = [
-        Q1[0] + getAnimateStep(Q1[0], Q2[0]) * this.__frame,
-        Q1[1] + getAnimateStep(Q1[1], Q2[1]) * this.__frame,
+        Q1[0] + getAnimateStep(Q1[0], Q2[0]) * this.frame,
+        Q1[1] + getAnimateStep(Q1[1], Q2[1]) * this.frame,
       ];
       ctx.beginPath();
       ctx.moveTo(startX, startY);

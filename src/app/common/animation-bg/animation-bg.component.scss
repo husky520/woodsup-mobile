@@ -1,0 +1,37 @@
+.animation-canvas {
+  width: 500%;
+  margin-left: -115%;
+  margin-top: 50%;
+}
+
+@media all and (min-width: 376px) {
+  .animation-canvas {
+    width: 500%;
+    margin-left: -115%;
+    margin-top: 50%;
+  }
+}
+
+@media all and (min-width: 414px) {
+  .animation-canvas {
+    width: 400%;
+    margin-left: -80%;
+    margin-top: 40%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .animation-canvas {
+    width: 300%;
+    margin-left: -40%;
+    margin-top: 30%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .animation-canvas {
+    width: 300%;
+    margin-left: -40%;
+    margin-top: 15%;
+  }
+}
