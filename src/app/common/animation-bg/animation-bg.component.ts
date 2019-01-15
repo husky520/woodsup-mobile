@@ -20,6 +20,7 @@ export class AnimationBgComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.openingAnimate({
       el: this.el.nativeElement,
+      speed: 2,
     });
   }
 
