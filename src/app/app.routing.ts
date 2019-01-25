@@ -14,5 +14,5 @@ export const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: 'join-us', component: JoinUsComponent },
   { path: 'trial', component: TrialComponent },
-  { path: '**', component: NotFound404Component }
+  { path: '**', redirectTo: '' }
 ];
