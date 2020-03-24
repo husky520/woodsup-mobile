@@ -49,10 +49,10 @@
         padding: 0.6rem 1rem;
         margin-left: auto;
         margin-right: auto;
-    
+
         border-radius: 0.3rem;
         background: #76bdf8;
-    
+
         color: #fff;
         text-decoration: none;
         font-size: 1rem;
@@ -189,10 +189,12 @@
       }
     } // .info end
 
-    .copyright {
+    .copyright,
+    .copyright a {
       padding: 0.5em 0 1.5rem 0;
       color: #fff;
       text-align: center;
+      text-decoration: none;
 
       p {
         font-size: 0.8rem;
