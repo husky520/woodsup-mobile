@@ -36,8 +36,11 @@
           height: 80px;
           padding: 0 1rem;
           img {
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
             width: 80px;
             height: 80px;
+            object-fit: cover;
           }
         }
 
@@ -62,7 +65,7 @@
         position: absolute;
         top: 5rem;
       }
-  
+
       .team-list-1.hide {
         transform: translateX(-100vw);
       }
@@ -70,17 +73,17 @@
         transform: translateX(100vw);
       }
     }
-  
+
     .more {
       margin: 2rem;
       text-align: right;
-      
+
       a {
         font-size: 0.8rem;
         font-weight: normal;
         text-decoration: none;
         color: #333;
-  
+
         .icon-more {
           font-family: serif;
           color: $light-blue;
