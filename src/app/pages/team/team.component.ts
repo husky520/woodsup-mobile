@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { TeamData } from '../../interface/team.interface';
 import { JobData } from '../../interface/job.interface';
-import { teamData1, teamData2 } from '../../mock/team.data';
 import { jobsData } from '../../mock/jobs.data';
+import { HttpClient } from '@angular/common/http';
+import { take } from 'rxjs/internal/operators';
 
 @Component({
   selector: 'team-page',
@@ -17,11 +18,18 @@ export class TeamComponent implements OnInit, AfterViewInit {
 
   public tabIndex: number;
 
+  constructor(private http: HttpClient) {}
+
   ngOnInit(): void {
-    this.team1 = teamData1;
-    this.team2 = teamData2;
     this.jobsData = jobsData;
     this.tabIndex = 1;
+
+    this.http.get('/assets/data/team.json').pipe(take(1)).subscribe((res: any) => {
+      if (res && res.teamData1 && res.teamData2) {
+        this.team1 = res.teamData1;
+        this.team2 = res.teamData2;
+      }
+    });
   }
 
   ngAfterViewInit(): void {
